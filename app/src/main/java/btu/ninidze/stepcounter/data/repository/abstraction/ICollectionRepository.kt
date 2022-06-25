@@ -2,6 +2,7 @@ package btu.ninidze.stepcounter.data.repository.abstraction
 
 import btu.ninidze.stepcounter.data.network.helper.Resource
 import btu.ninidze.stepcounter.data.network.models.collection.CollectionItem
+import btu.ninidze.stepcounter.ui.GetMoney
 import btu.ninidze.stepcounter.ui.User
 import btu.ninidze.stepcounter.ui.auth.CreateUser
 import btu.ninidze.stepcounter.ui.details.model.BuySneakers
@@ -15,5 +16,6 @@ interface ICollectionRepository {
     suspend fun buySneakers(request: BuySneakers): Resource<User>
     suspend fun getUserById(userId: String): Resource<User>
     suspend fun getUsersCollection(userId: String): Resource<List<CollectionItem>>
+    suspend fun getMoney(request: GetMoney): Resource<User>
 
 }

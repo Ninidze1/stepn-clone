@@ -7,6 +7,7 @@ import btu.ninidze.stepcounter.data.repository.abstraction.ICollectionRepository
 import btu.ninidze.stepcounter.data.repository.abstraction.IFirebaseRepository
 import btu.ninidze.stepcounter.data.repository.abstraction.IStepRepository
 import btu.ninidze.stepcounter.data.repository.impl.StepRepository
+import btu.ninidze.stepcounter.ui.GetMoney
 import btu.ninidze.stepcounter.ui.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -30,9 +31,28 @@ class StepViewModel @Inject constructor(
 
     val totalSteps = stepRepository.getTotalSteps().asLiveData()
 
+    private var _getMoney = MutableLiveData<Resource<User>>()
+    val getMoney: LiveData<Resource<User>> = _getMoney
+
+    fun getMoney(money: String) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                _getMoney.postValue(
+                    collectionRepository.getMoney(
+                        GetMoney(
+                            userId = firebaseRepository.getUser()?.uid ?: "null",
+                            money = money
+                        )
+                    )
+                )
+            }
+        }
+    }
+
     fun getUser() {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
+                println(firebaseRepository.getUser()?.uid ?: "null")
                 _getUser.postValue(
                     collectionRepository.getUserById(
                         firebaseRepository.getUser()?.uid ?: "null"

@@ -6,6 +6,7 @@ import btu.ninidze.stepcounter.data.network.helper.Resource
 import btu.ninidze.stepcounter.data.network.helper.asResource
 import btu.ninidze.stepcounter.data.network.models.collection.CollectionItem
 import btu.ninidze.stepcounter.data.repository.abstraction.ICollectionRepository
+import btu.ninidze.stepcounter.ui.GetMoney
 import btu.ninidze.stepcounter.ui.User
 import btu.ninidze.stepcounter.ui.auth.CreateUser
 import btu.ninidze.stepcounter.ui.details.model.BuySneakers
@@ -54,6 +55,12 @@ class CollectionRepository @Inject constructor(
     override suspend fun getUsersCollection(userId: String): Resource<List<CollectionItem>> {
         return apiHelper
             .safeApiCall { apiService.getUsersSneakers(userId) }
+            .asResource(onSuccess = { it })
+    }
+
+    override suspend fun getMoney(request: GetMoney): Resource<User> {
+        return apiHelper
+            .safeApiCall { apiService.getMoney(request) }
             .asResource(onSuccess = { it })
     }
 }

@@ -1,6 +1,7 @@
 package btu.ninidze.stepcounter.data.network
 
 import btu.ninidze.stepcounter.data.network.models.collection.CollectionItem
+import btu.ninidze.stepcounter.ui.GetMoney
 import btu.ninidze.stepcounter.ui.User
 import btu.ninidze.stepcounter.ui.auth.CreateUser
 import btu.ninidze.stepcounter.ui.details.model.BuySneakers
@@ -32,4 +33,7 @@ interface ApiService {
 
     @GET("collection/user/{userId}")
     suspend fun getUsersSneakers (@Path("userId") userId: String): Response<List<CollectionItem>>
+
+    @POST("user/money")
+    suspend fun getMoney (@Body request: GetMoney): Response<User>
 }

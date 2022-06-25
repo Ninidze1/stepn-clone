@@ -32,6 +32,7 @@ class ShelfFragment : BaseFragment<FragmentShelfBinding>() {
     }
 
     private fun subscribeToObservers() = with(binding) {
+
         viewModel.getUsersSneakers.observe(viewLifecycleOwner) { response ->
             when(response) {
                 is Resource.Success -> {

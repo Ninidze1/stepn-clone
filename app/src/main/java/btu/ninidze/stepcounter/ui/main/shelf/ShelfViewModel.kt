@@ -10,6 +10,7 @@ import btu.ninidze.stepcounter.data.repository.abstraction.ICollectionRepository
 import btu.ninidze.stepcounter.data.repository.abstraction.IFirebaseRepository
 import btu.ninidze.stepcounter.data.repository.impl.CollectionRepository
 import btu.ninidze.stepcounter.data.repository.impl.FirebaseRepository
+import btu.ninidze.stepcounter.ui.GetMoney
 import btu.ninidze.stepcounter.ui.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
