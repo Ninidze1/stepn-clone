@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="btu.ninidze.stepcounter.ui.auth.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bot"
+            app:popEnterAnim="@anim/slide_in_bot"
+            app:popExitAnim="@anim/slide_out_top" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetFragment"
+            app:destination="@id/resetFragment"
+            app:enterAnim="@anim/slide_in_bot"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bot" />
+        <action
+            android:id="@+id/action_loginFragment_to_wearFragment"
+            app:destination="@id/wearFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="btu.ninidze.stepcounter.ui.auth.register.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/register_fragment">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_bot"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bot"
+            app:popUpTo="@id/auth_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_registerFragment_to_wearFragment"
+            app:destination="@id/wearFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetFragment"
+        android:name="btu.ninidze.stepcounter.ui.auth.reset.ResetFragment"
+        android:label="reset_fragment"
+        tools:layout="@layout/reset_fragment">
+        <action
+            android:id="@+id/action_resetFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bot"
+            app:popEnterAnim="@anim/slide_in_bot"
+            app:popExitAnim="@anim/slide_out_top"
+            app:popUpTo="@id/auth_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="btu.ninidze.stepcounter.ui.splash.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_wearFragment"
+            app:destination="@id/wearFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_counterFragment"
+            app:destination="@id/counterFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wearFragment"
+        android:name="btu.ninidze.stepcounter.ui.total.WearFragment"
+        android:label="fragment_wear"
+        tools:layout="@layout/fragment_wear">
+
+        <action
+            android:id="@+id/action_wearFragment_to_counterFragment"
+            app:destination="@id/counterFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bot"
+            app:popEnterAnim="@anim/slide_in_bot"
+            app:popExitAnim="@anim/slide_out_top"
+            app:popUpTo="@id/wearFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_wearFragment_to_giftFragment"
+            app:destination="@id/giftFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/wearFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/giftFragment"
+        android:name="btu.ninidze.stepcounter.ui.gift.GiftFragment"
+        android:label="fragment_gift"
+        tools:layout="@layout/fragment_gift">
+        <action
+            android:id="@+id/action_giftFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bot"
+            app:popEnterAnim="@anim/slide_in_bot"
+            app:popExitAnim="@anim/slide_out_top" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="btu.ninidze.stepcounter.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="tokenId"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_detailsFragment_to_counterFragment"
+            app:destination="@id/counterFragment"
+            app:popUpTo="@id/detailsFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="from"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/counterFragment"
+        android:name="btu.ninidze.stepcounter.ui.main.CounterFragment"
+        android:label="fragment_counter"
+        tools:layout="@layout/fragment_counter">
+        <action
+            android:id="@+id/action_counterFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/nav_nested_graph"
+        app:startDestination="@id/stepFragment">
+
+        <fragment
+            android:id="@+id/stepFragment"
+            android:name="btu.ninidze.stepcounter.ui.main.count.StepFragment"
+            android:label="fragment_step"
+            tools:layout="@layout/fragment_step" />
+        <fragment
+            android:id="@+id/shopFragment"
+            android:name="btu.ninidze.stepcounter.ui.main.shop.ShopFragment"
+            android:label="fragment_show"
+            tools:layout="@layout/fragment_show" />
+        <fragment
+            android:id="@+id/shelfFragment2"
+            android:name="btu.ninidze.stepcounter.ui.main.shelf.ShelfFragment"
+            android:label="fragment_shelf"
+            tools:layout="@layout/fragment_shelf">
+            <action
+                android:id="@+id/action_nav_tabs_to_nav_send"
+                app:destination="@id/auth_navigation"/>
+        </fragment>
+    </navigation>
+
+</navigation>

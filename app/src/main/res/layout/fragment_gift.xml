@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondary_color"
+    tools:context=".ui.gift.GiftFragment">
+
+    <TextView
+        android:id="@+id/tvChoseGift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/montera_bold"
+        android:text="@string/chose_your_first"
+        android:textColor="@color/main_color"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvGiftDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llOptionThird" />
+
+    <TextView
+        android:id="@+id/tvGiftDescription"
+        android:layout_width="339dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montera_regular"
+        android:gravity="center"
+        android:text="@string/your_first_digital_sneakers_are_on_us_these_will_help_you_earn_your_way_up"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChoseGift" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llOptionFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/llOptionSecond"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOptionFirst"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvFirstId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="#47"
+            android:layout_marginStart="12dp"
+            android:textSize="40sp"
+            android:fontFamily="@font/proxima_black"
+            android:textColor="@color/main_color"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llOptionSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/llOptionThird"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llOptionFirst">
+
+        <TextView
+            android:id="@+id/tvSecondId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="#47"
+            android:layout_marginEnd="12dp"
+            android:textSize="40sp"
+            android:fontFamily="@font/proxima_black"
+            android:textColor="@color/main_color"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOptionSecond"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            tools:src="@tools:sample/avatars" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llOptionThird"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/tvChoseGift"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llOptionSecond">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOptionThird"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvThirdId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="#47"
+            android:layout_marginStart="12dp"
+            android:textSize="40sp"
+            android:fontFamily="@font/proxima_black"
+            android:textColor="@color/main_color"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
